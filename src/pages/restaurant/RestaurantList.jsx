@@ -10,7 +10,8 @@ const RestaurantList = () => {
 
   const fetchRestaurants = async () => {
     try {
-      const res = await axios.get(`${baseUrl}/restaurant/list`);
+      // const res = await axios.get(`${baseUrl}/restaurant/list`);
+      const res = await axios.get(`http://127.0.0.1:8000/api/restaurant/list`);
       setRestaurants(res.data.restaurants || []);
     } catch (err) {
       console.error(err);
@@ -28,7 +29,9 @@ const RestaurantList = () => {
     if (!window.confirm("Are you sure to delete this restaurant?")) return;
 
     try {
-      const res = await axios.post(`${baseUrl}/restaurant/delete`, { id });
+      const res = await axios.post(`http://127.0.0.1:8000/api/restaurant/delete`, { id });
+      console.log(res);
+      
       if (res.data.success === "yes") {
         fetchRestaurants();
       } else {

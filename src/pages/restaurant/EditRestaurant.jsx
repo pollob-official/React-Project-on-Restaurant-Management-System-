@@ -20,11 +20,11 @@ const EditRestaurant = () => {
 
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState("");
-
+ 
   useEffect(() => {
     const fetchRestaurant = async () => {
       try {
-        const res = await axios.post(`${baseUrl}/restaurant/find`, { id: restaurantId });
+        const res = await axios.post(`http://127.0.0.1:8000/api/restaurant/find/${restaurantId}`, { id: restaurantId });
         if (res.data.restaurant) {
           setRestaurant({
             ...res.data.restaurant,
@@ -55,7 +55,8 @@ const EditRestaurant = () => {
   const handleSubmit = async (e) => {
     e.preventDefault();
     try {
-      await axios.post(`${baseUrl}/restaurant/update`, { ...restaurant });
+      // await axios.post(`${baseUrl}/restaurant/update`, { ...restaurant });
+      await axios.post(`http://127.0.0.1:8000/api/restaurant/update`, { ...restaurant });
       alert("Restaurant updated successfully!");
       navigate("/restaurant");
     } catch (err) {

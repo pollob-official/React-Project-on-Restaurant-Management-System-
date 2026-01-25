@@ -24,7 +24,11 @@ const CreateRestaurant = () => {
   const handleSubmit = async (e) => {
     e.preventDefault();
     try {
-      await axios.post(`${baseUrl}/restaurant/save`, form);
+      // await axios.post(`${baseUrl}/restaurant/save`, form);
+      let res=await axios.post(`http://127.0.0.1:8000/api/restaurant/save`, form)
+      ;
+      console.log(res);
+      
       navigate("/restaurant");
     } catch (err) {
       console.error(err);
