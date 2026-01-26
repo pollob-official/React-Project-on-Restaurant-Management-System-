@@ -56,7 +56,8 @@ const EditRestaurant = () => {
     e.preventDefault();
     try {
       // await axios.post(`${baseUrl}/restaurant/update`, { ...restaurant });
-      await axios.post(`http://127.0.0.1:8000/api/restaurant/update`, { ...restaurant });
+     let res= await axios.post(`http://127.0.0.1:8000/api/restaurant/update`, { ...restaurant });
+     console.log(res)
       alert("Restaurant updated successfully!");
       navigate("/restaurant");
     } catch (err) {

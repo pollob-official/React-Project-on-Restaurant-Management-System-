@@ -53,6 +53,8 @@ const CreateRider = () => {
         headers: { "Content-Type": "multipart/form-data" },
       });
 
+      console.log("Rider created:", res);
+
       if (res.data.success === "yes") {
         alert("✅ Rider created successfully!");
         navigate("/rider");
