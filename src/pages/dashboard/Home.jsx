@@ -1,6 +1,14 @@
-import React from 'react'
+import React, { useContext } from 'react'
+import { AuthContext } from '../../route/PrivateRoute';
+import AdminDashboard from './AdminDashboard';
 
 const Home = () => {
+  const user = useContext(AuthContext);
+
+  if (user && user.role_id == 1) {
+      return <AdminDashboard />;
+  }
+
   return (
     <>
     
@@ -13,17 +21,17 @@ const Home = () => {
                   <div className="swiper-wrapper">
                     <div className="swiper-slide">
                       <div className="banner-bx">
-                        <img src="assets/images/banner-img/pic-1.jpg" alt />
+                        <img src="assets/images/banner-img/pic-1.jpg" alt="" />
                       </div>
                     </div>
                     <div className="swiper-slide">
                       <div className="banner-bx">
-                        <img src="assets/images/banner-img/pic-3.jpg" alt />
+                        <img src="assets/images/banner-img/pic-3.jpg" alt="" />
                       </div>
                     </div>
                     <div className="swiper-slide">
                       <div className="banner-bx">
-                        <img src="assets/images/banner-img/pic-4.jpg" alt />
+                        <img src="assets/images/banner-img/pic-4.jpg" alt="" />
                       </div>
                     </div>
                   </div>

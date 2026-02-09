@@ -521,7 +521,7 @@
 			MagnificPopup();
 			FoodDeskSwiper();
 			handleSearchArea();
-			handleSupport();
+			//handleSupport();
 			//handleHeart();
 			
 			//handleBsSelect();

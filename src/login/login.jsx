@@ -14,10 +14,16 @@ const Login = () => {
   const [registerData, setRegisterData] = useState({
     username: "",
     email: "",
+    phone: "",
     password: "",
   });
 
   const [error, setError] = useState("");
+
+  const quickLogin = (username, password) => {
+    setLoginData({ username, password });
+    setIsLogin(true);
+  };
 
   // -------------------------
   // LOGIN SUBMIT
@@ -34,13 +40,15 @@ const Login = () => {
       
       if (res.data.success) {
         localStorage.setItem("token", res.data.token);
-        navigate("/");
+        // navigate("/");
+        window.location.href = "/";
      
       } else {
         setError("Invalid username or password");
       }
-    } catch {
-      setError("Server error");
+    } catch (err) {
+      console.error(err);
+      setError(err.response?.data?.message || err.message || "Server error");
     }
   };
 
@@ -61,8 +69,9 @@ const Login = () => {
       } else {
         setError(res.data.message || "Registration failed");
       }
-    } catch {
-      setError("Server error");
+    } catch (err) {
+      console.error(err);
+      setError(err.response?.data?.message || err.message || "Server error");
     }
   };
 
@@ -103,12 +112,12 @@ const Login = () => {
                   <form onSubmit={handleLogin}>
                     <div className="mb-3">
                       <label className="mb-1">
-                        <strong>Email Address</strong>
+                        <strong>Username or Email</strong>
                       </label>
                       <input
                         type="text"
                         className="form-control"
-                        placeholder="hello@example.com"
+                        placeholder="Username or Email"
                         value={loginData.username}
                         onChange={(e) =>
                           setLoginData({
@@ -196,6 +205,24 @@ const Login = () => {
 
                     <div className="mb-3">
                       <label className="mb-1">
+                        <strong>Phone</strong>
+                      </label>
+                      <input
+                        type="text"
+                        className="form-control"
+                        placeholder="01700000000"
+                        value={registerData.phone}
+                        onChange={(e) =>
+                          setRegisterData({
+                            ...registerData,
+                            phone: e.target.value,
+                          })
+                        }
+                      />
+                    </div>
+
+                    <div className="mb-3">
+                      <label className="mb-1">
                         <strong>Password</strong>
                       </label>
                       <input
@@ -262,6 +289,28 @@ const Login = () => {
                       </span>
                     </span>
                   )}
+                </div>
+
+                {/* Quick Login Buttons */}
+                <div className="mt-4">
+                  <h6 className="text-center text-muted mb-3">Quick Login (Demo)</h6>
+                  <select 
+                     className="form-control default-select form-control-sm" 
+                     onChange={(e) => {
+                       const role = e.target.value;
+                       if(role === 'admin') quickLogin("admin@foodapp.com", "12345");
+                       else if(role === 'restaurant') quickLogin("restaurant@foodapp.com", "12345");
+                       else if(role === 'rider') quickLogin("rider@foodapp.com", "12345");
+                       else if(role === 'customer') quickLogin("customer@foodapp.com", "12345");
+                     }}
+                     defaultValue=""
+                   >
+                    <option value="" disabled>Select Demo Account</option>
+                    <option value="admin">Admin</option>
+                    <option value="restaurant">Restaurant</option>
+                    <option value="rider">Rider</option>
+                    <option value="customer">Customer</option>
+                  </select>
                 </div>
 
               </div>

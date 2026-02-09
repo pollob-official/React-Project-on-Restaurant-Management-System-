@@ -235,16 +235,13 @@ const Sidebar = () => {
               </ul>
             </li>
           </ul>
-          <div className="plus-box">
+          {/* <div className="plus-box">
             <div className="d-flex align-items-center">
               <h5>Upgrade your Account to Get Free Voucher</h5>
             </div>
             <a href="javascript:void(0);" className="btn bg-white btn-sm">Upgrade</a>
-          </div>
-          <div className="copyright mt-0">
-            <p><strong>Food Desk - Online Food Delivery Admin Dashboard</strong> © 2022 All Rights Reserved</p>
-            <p className="fs-12">Made with <span className="heart" /> by DexignLab</p>
-          </div>
+          </div> */}
+         
         </div>
       </div>
 

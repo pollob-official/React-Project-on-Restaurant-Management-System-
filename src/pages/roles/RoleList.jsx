@@ -1,4 +1,4 @@
-import axios from 'axios';
+import api from '../../api/axios';
 import React, { useEffect, useState } from 'react';
 import { Link } from 'react-router-dom';
 
@@ -6,11 +6,7 @@ import { Link } from 'react-router-dom';
 const RoleList = () => {
 
   const getRoles = () => {
-    axios({
-      url: `${baseUrl}/role`,
-      method: "GET",
-      data: {}
-    })
+    api.get('/role')
       .then((res) => {
         console.log(res.data);
         setRoles(res.data.roles)
@@ -33,11 +29,7 @@ const RoleList = () => {
   // map
 
   function deleteRole(id) {
-    axios({
-      url: `${baseUrl}/role/delete`,
-      method: "DELETE",
-      data: { id:id }
-    })
+    api.post('/role/delete', { id:id })
       .then(res => {
         console.log(res);
         getRoles();

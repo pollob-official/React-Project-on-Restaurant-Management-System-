@@ -1,17 +1,15 @@
 import React, { useEffect, useState } from "react";
-import axios from "axios";
+import api from "../../api/axios";
 import { Link } from "react-router-dom";
 
 const RestaurantList = () => {
-  const baseUrl = import.meta.env.VITE_API_BASE_URL;
   const [restaurants, setRestaurants] = useState([]);
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState("");
 
   const fetchRestaurants = async () => {
     try {
-      // const res = await axios.get(`${baseUrl}/restaurant/list`);
-      const res = await axios.get(`http://127.0.0.1:8000/api/restaurant/list`);
+      const res = await api.get("/restaurant/list");
       setRestaurants(res.data.restaurants || []);
     } catch (err) {
       console.error(err);
@@ -29,7 +27,7 @@ const RestaurantList = () => {
     if (!window.confirm("Are you sure to delete this restaurant?")) return;
 
     try {
-      const res = await axios.post(`http://127.0.0.1:8000/api/restaurant/delete`, { id });
+      const res = await api.post("/restaurant/delete", { id });
       console.log(res);
       
       if (res.data.success === "yes") {
