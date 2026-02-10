@@ -51,6 +51,12 @@ class OrderApi {
         $order->delivery_fee = $data["delivery_fee"];
         $order->tax_amount = $data["tax_amount"];
         $order->coupon_id = 000; // $data["coupon_id"];
+        
+        // If tracking status is 'Delivered' (id=9), automatically set payment status to 'paid'
+        if ($data["tracking_id"] == 9) {
+            $data["payment_status"] = "paid";
+        }
+        
         $order->payment_status = $data["payment_status"];
         $order->tracking_id = $data["tracking_id"];
         $order->created_at = $now;
@@ -86,6 +92,12 @@ class OrderApi {
         $order->delivery_fee = $data["delivery_fee"];
         $order->tax_amount = $data["tax_amount"];
         $order->coupon_id = $data["coupon_id"];
+
+        // If tracking status is 'Delivered' (id=9), automatically set payment status to 'paid'
+        if ($data["tracking_id"] == 9) {
+            $data["payment_status"] = "paid";
+        }
+
         $order->payment_status = $data["payment_status"];
         $order->tracking_id = $data["tracking_id"];
         $order->version = $data["version"];
@@ -99,6 +111,11 @@ class OrderApi {
         $order = new Order();
         $order->id = $data["id"];
         $order->tracking_id = $data["tracking_id"];
+
+        if ($data["tracking_id"] == 9) {
+            $order->payment_status = "paid";
+        }
+
         $order->update_by_tracking_id();
         echo json_encode(["success" => "yes"]);
     }
