@@ -5,6 +5,9 @@ class DashboardApi {
     function index() {
         global $db, $tx;
 
+        // Clear any previous output to ensure clean JSON
+        if (ob_get_length()) ob_clean();
+
         // Ensure JSON response
         header('Content-Type: application/json');
 
@@ -23,9 +26,9 @@ class DashboardApi {
         $result = $db->query("select count(*) from menu_items");
         list($total_menu_items) = $result->fetch_row();
 
-        // Total Revenue (from invoices where payment_status is Paid)
-        // Table `invoices` has `payment_status` enum('Paid','Unpaid','Pending')
-        $result = $db->query("select sum(total_amount) from invoices where payment_status = 'Paid'");
+        // Total Revenue (calculated from orders table for immediate updates)
+        // We sum up the total_amount of all orders
+        $result = $db->query("select sum(total_amount) from orders");
         list($total_revenue) = $result->fetch_row();
         $total_revenue = $total_revenue ? $total_revenue : 0;
 
@@ -62,4 +65,3 @@ class DashboardApi {
         ]);
     }
 }
-?>

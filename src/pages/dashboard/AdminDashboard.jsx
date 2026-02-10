@@ -91,7 +91,7 @@ const AdminDashboard = () => {
                                 </span>
                                 <div className="media-body">
                                     <p className="mb-1">Total Revenue</p>
-                                    <h4 className="mb-0">${stats.total_revenue}</h4>
+                                    <h4 className="mb-0">৳{stats.total_revenue}</h4>
                                 </div>
                             </div>
                         </div>
@@ -124,7 +124,7 @@ const AdminDashboard = () => {
                                                     <td><strong>#{order.id}</strong></td>
                                                     <td>{order.customer_name}</td>
                                                     <td>{new Date(order.created_at).toLocaleDateString()}</td>
-                                                    <td>${order.total_amount}</td>
+                                                    <td>৳{order.total_amount}</td>
                                                     <td>
                                                         <span className={`badge light badge-${
                                                             (order.status || '').toLowerCase() === 'delivered' ? 'success' :
