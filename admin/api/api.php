@@ -1,9 +1,11 @@
 <?php
+ob_start();
+
 require_once("../configs/db_config.php");
 require_once("../configs/app_config.php");
 
 header("Access-Control-Allow-Origin:*");
-header('Access-Control-Allow-Methods: GET, POST, PUT, DELETE, PATCH',"OPTIONS");
+header('Access-Control-Allow-Methods: GET, POST, PUT, DELETE, PATCH');
 header("Access-Control-Allow-Headers: Origin, X-Requested-With, Content-Type, Accept, Authorization");
 
 
@@ -183,6 +185,7 @@ if(isset($_GET["class"])){
           }
           
           //---Body Data---
+          /*
           if(count($params)==2) {         
            _parseGet();              
            $params=$_GET; 
@@ -191,6 +194,7 @@ if(isset($_GET["class"])){
                 echo "Invalid JSON data";
             }           
           }
+          */
 
         }else if($res_method=="PUT"){
                     

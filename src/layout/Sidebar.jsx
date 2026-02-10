@@ -9,21 +9,11 @@ const Sidebar = () => {
         <div className="dlabnav-scroll">
           <p className="menu-title style-1"> Main Menu</p>
           <ul className="metismenu" id="menu">
-            <li><a className="has-arrow " href="javascript:void(0);" aria-expanded="false">
-              <i className="bi bi-grid" />
-              <span className="nav-text">Dashboard</span>
-            </a>
-              <ul aria-expanded="false">
-                <li><a href="index.html">Dashboard Light</a></li>
-                <li><a href="index-2.html">Dashboard Dark</a></li>
-                <li><a href="food-order.html">Food Order</a></li>
-                <li><a href="favorite-menu.html">Favorite Menu</a></li>
-                <li><a href="message.html">Message</a></li>
-                <li><a href="order-history.html">Order History</a></li>
-                <li><a href="notification.html">Notification</a></li>
-                <li><a href="bill.html">Bill</a></li>
-                <li><a href="setting.html">Setting</a></li>
-              </ul>
+            <li>
+              <Link to="/" aria-expanded="false">
+                <i className="bi bi-grid" />
+                <span className="nav-text">Dashboard</span>
+              </Link>
             </li>
 
             <li>
@@ -235,16 +225,13 @@ const Sidebar = () => {
               </ul>
             </li>
           </ul>
-          <div className="plus-box">
+          {/* <div className="plus-box">
             <div className="d-flex align-items-center">
               <h5>Upgrade your Account to Get Free Voucher</h5>
             </div>
             <a href="javascript:void(0);" className="btn bg-white btn-sm">Upgrade</a>
-          </div>
-          <div className="copyright mt-0">
-            <p><strong>Food Desk - Online Food Delivery Admin Dashboard</strong> © 2022 All Rights Reserved</p>
-            <p className="fs-12">Made with <span className="heart" /> by DexignLab</p>
-          </div>
+          </div> */}
+         
         </div>
       </div>
 

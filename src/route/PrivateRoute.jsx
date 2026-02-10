@@ -22,10 +22,11 @@ function decodeJWT(token) {
 }
 
 const token = localStorage.getItem("token");
-const userData = decodeJWT(token);
+
 // console.log("tokendecode",decoded);
 // const userData = JSON.parse(localStorage.getItem( "userData")) ;
   if( token){
+    const userData = decodeJWT(token);
     return (
        <AuthContext.Provider value={userData}>
        {children } 

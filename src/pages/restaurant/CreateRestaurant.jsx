@@ -1,10 +1,9 @@
 import React, { useState } from "react";
 import { useNavigate } from "react-router-dom";
-import axios from "axios";
+import api from "../../api/axios";
 
 const CreateRestaurant = () => {
   const navigate = useNavigate();
-  const baseUrl = import.meta.env.VITE_API_BASE_URL;
 
   const [form, setForm] = useState({
     name: "",
@@ -24,9 +23,7 @@ const CreateRestaurant = () => {
   const handleSubmit = async (e) => {
     e.preventDefault();
     try {
-      // await axios.post(`${baseUrl}/restaurant/save`, form);
-      let res=await axios.post(`http://127.0.0.1:8000/api/restaurant/save`, form)
-      ;
+      let res = await api.post("/restaurant/save", form);
       console.log(res);
       
       navigate("/restaurant");

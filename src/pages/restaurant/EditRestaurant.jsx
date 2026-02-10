@@ -1,11 +1,10 @@
 import React, { useEffect, useState } from "react";
 import { useParams, useNavigate } from "react-router-dom";
-import axios from "axios";
+import api from "../../api/axios";
 
 const EditRestaurant = () => {
   const { restaurantId } = useParams(); 
   const navigate = useNavigate();
-  const baseUrl = import.meta.env.VITE_API_BASE_URL;
 
   const [restaurant, setRestaurant] = useState({
     id: "",
@@ -24,7 +23,7 @@ const EditRestaurant = () => {
   useEffect(() => {
     const fetchRestaurant = async () => {
       try {
-        const res = await axios.post(`http://127.0.0.1:8000/api/restaurant/find/${restaurantId}`, { id: restaurantId });
+        const res = await api.post(`/restaurant/find/${restaurantId}`, { id: restaurantId });
         if (res.data.restaurant) {
           setRestaurant({
             ...res.data.restaurant,
@@ -55,8 +54,8 @@ const EditRestaurant = () => {
   const handleSubmit = async (e) => {
     e.preventDefault();
     try {
-      // await axios.post(`${baseUrl}/restaurant/update`, { ...restaurant });
-      await axios.post(`http://127.0.0.1:8000/api/restaurant/update`, { ...restaurant });
+      let res = await api.post("/restaurant/update", { ...restaurant });
+      console.log(res);
       alert("Restaurant updated successfully!");
       navigate("/restaurant");
     } catch (err) {

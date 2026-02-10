@@ -6,4 +6,3 @@
     "database"=>"Database",
     "domain"=>"Domain",
     "subdomain"=>"Subdomain"];
-?>

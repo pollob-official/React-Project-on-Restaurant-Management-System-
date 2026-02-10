@@ -661,19 +661,19 @@ const Layout = () => {
                     </div>
                   </a>
                   <div className="dropdown-menu dropdown-menu-end">
-                    <a href="app-profile.html" className="dropdown-item ai-icon ">
+                    <a href="#" className="dropdown-item ai-icon ">
                       <svg xmlns="http://www.w3.org/2000/svg" className="text-primary" width={18} height={18} viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth={2} strokeLinecap="round" strokeLinejoin="round"><path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2" /><circle cx={12} cy={7} r={4} /></svg>
                       <span className="ms-2">Profile</span>
                     </a>
-                    <a href="email-inbox.html" className="dropdown-item ai-icon">
+                    <a href="#" className="dropdown-item ai-icon">
                       <svg xmlns="http://www.w3.org/2000/svg" className="text-primary" width={18} height={18} viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth={2} strokeLinecap="round" strokeLinejoin="round"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z" /><polyline points="22,6 12,13 2,6" /></svg>
                       <span className="ms-2">Inbox</span>
                     </a>
-                    <a href="edit-profile.html" className="dropdown-item ai-icon">
+                    <a href="#" className="dropdown-item ai-icon">
                       <svg xmlns="http://www.w3.org/2000/svg" className="text-primary" width={18} height={18} viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth={2} strokeLinecap="round" strokeLinejoin="round"><path d="M11 4H4a2 2 0 0 0-2 2v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2v-7" /><path d="M18.5 2.5a2.121 2.121 0 0 1 3 3L12 15l-4 1 1-4 9.5-9.5z" /></svg>
                       <span className="ms-2">Edit Profile</span>
                     </a>
-                    <a href="message.html" className="dropdown-item ai-icon ">
+                    <a href="#" className="dropdown-item ai-icon ">
                       <svg xmlns="http://www.w3.org/2000/svg" xmlnsXlink="http://www.w3.org/1999/xlink" width="24px" height="24px" viewBox="0 0 24 24" version="1.1" className="svg-main-icon">
                         <g stroke="none" strokeWidth={1} fill="none" fillRule="evenodd">
                           <rect x={0} y={0} width={24} height={24} />
@@ -682,7 +682,7 @@ const Layout = () => {
                       </svg>
                       <span className="ms-2">Message</span>
                     </a>
-                    <a href="notification.html" className="dropdown-item ai-icon ">
+                    <a href="#" className="dropdown-item ai-icon ">
                       <svg xmlns="http://www.w3.org/2000/svg" xmlnsXlink="http://www.w3.org/1999/xlink" width="24px" height="24px" viewBox="0 0 24 24" version="1.1" className="svg-main-icon">
                         <g stroke="none" strokeWidth={1} fill="none" fillRule="evenodd">
                           <rect x={0} y={0} width={24} height={24} />
@@ -692,7 +692,7 @@ const Layout = () => {
                       </svg>
                       <span className="ms-2">Notification </span>
                     </a>
-                    <a href="setting.html" className="dropdown-item ai-icon ">
+                    <a href="#" className="dropdown-item ai-icon ">
                       <svg xmlns="http://www.w3.org/2000/svg" xmlnsXlink="http://www.w3.org/1999/xlink" width="24px" height="24px" viewBox="0 0 24 24" version="1.1" className="svg-main-icon">
                         <g stroke="none" strokeWidth={1} fill="none" fillRule="evenodd">
                           <rect x={0} y={0} width={24} height={24} />

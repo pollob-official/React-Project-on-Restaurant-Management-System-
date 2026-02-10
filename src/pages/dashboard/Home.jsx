@@ -1,6 +1,8 @@
-import React from 'react'
+import React, { useContext } from 'react'
+import { AuthContext } from '../../route/PrivateRoute'
+import AdminDashboard from './AdminDashboard'
 
-const Home = () => {
+const CustomerDashboard = () => {
   return (
     <>
     
@@ -13,17 +15,17 @@ const Home = () => {
                   <div className="swiper-wrapper">
                     <div className="swiper-slide">
                       <div className="banner-bx">
-                        <img src="assets/images/banner-img/pic-1.jpg" alt />
+                        <img src="assets/images/banner-img/pic-1.jpg" alt="Promotional Banner 1" />
                       </div>
                     </div>
                     <div className="swiper-slide">
                       <div className="banner-bx">
-                        <img src="assets/images/banner-img/pic-3.jpg" alt />
+                        <img src="assets/images/banner-img/pic-3.jpg" alt="Promotional Banner 2" />
                       </div>
                     </div>
                     <div className="swiper-slide">
                       <div className="banner-bx">
-                        <img src="assets/images/banner-img/pic-4.jpg" alt />
+                        <img src="assets/images/banner-img/pic-4.jpg" alt="Promotional Banner 3" />
                       </div>
                     </div>
                   </div>
@@ -255,7 +257,7 @@ const Home = () => {
                         <i className="fa-solid fa-heart ms-auto c-heart c-pointer" />
                       </div>
                       <div className="card-body p-0 text-center">
-                        <img src="assets/images/popular-img/pic-1.jpg" alt />
+                        <img src="assets/images/popular-img/pic-1.jpg" alt="Fish Burger" />
                       </div>
                       <div className="card-footer border-0 px-3">
                         <ul className="d-flex align-items-center mb-2">
@@ -301,7 +303,7 @@ const Home = () => {
                         <i className="fa-solid fa-heart ms-auto c-heart c-pointer" />
                       </div>
                       <div className="card-body p-0 text-center text-center">
-                        <img src="assets/images/popular-img/pic-2.jpg" alt />
+                        <img src="assets/images/popular-img/pic-2.jpg" alt="Beef Burger" />
                       </div>
                       <div className="card-footer border-0 px-3">
                         <ul className="d-flex align-items-center mb-2">
@@ -347,7 +349,7 @@ const Home = () => {
                         <i className="fa-solid fa-heart ms-auto c-heart c-pointer" />
                       </div>
                       <div className="card-body p-0 text-center">
-                        <img src="assets/images/popular-img/pic-3.jpg" alt />
+                        <img src="assets/images/popular-img/pic-3.jpg" alt="Cheese Burger" />
                       </div>
                       <div className="card-footer border-0 px-3">
                         <ul className="d-flex align-items-center mb-2">
@@ -393,7 +395,7 @@ const Home = () => {
                         <i className="fa-solid fa-heart ms-auto c-heart c-pointer" />
                       </div>
                       <div className="card-body p-0 text-center">
-                        <img src="assets/images/popular-img/pic-1.jpg" alt />
+                        <img src="assets/images/popular-img/pic-1.jpg" alt="Fish Burger" />
                       </div>
                       <div className="card-footer border-0 px-3">
                         <ul className="d-flex align-items-center mb-2">
@@ -439,7 +441,7 @@ const Home = () => {
                         <i className="fa-solid fa-heart ms-auto c-heart c-pointer" />
                       </div>
                       <div className="card-body p-0 text-center">
-                        <img src="assets/images/popular-img/pic-1.jpg" alt />
+                        <img src="assets/images/popular-img/pic-1.jpg" alt="Fish Burger" />
                       </div>
                       <div className="card-footer border-0 px-3">
                         <ul className="d-flex align-items-center mb-2">
@@ -485,7 +487,7 @@ const Home = () => {
                         <i className="fa-solid fa-heart ms-auto c-heart c-pointer style-1" />
                       </div>
                       <div className="card-body p-0 text-center">
-                        <img src="assets/images/popular-img/pic-1.jpg" alt />
+                        <img src="assets/images/popular-img/pic-1.jpg" alt="Fish Burger" />
                       </div>
                       <div className="card-footer border-0 px-3">
                         <ul className="d-flex align-items-center mb-2">
@@ -539,7 +541,7 @@ const Home = () => {
                     <div className="swiper-slide">
                       <div className="card dishe-bx b-hover review style-1">
                         <div className="card-body text-center py-3 d-flex justify-content-center">
-                          <img src="assets/images/popular-img/review-img/pic-1.jpg" alt />
+                          <img src="assets/images/popular-img/review-img/pic-1.jpg" alt="Pepperoni Pizza" />
                           <i className="fa-solid fa-heart c-heart c-pointer style-1" />
                         </div>
                         <div className="card-footer pt-0 border-0 text-center">
@@ -565,7 +567,7 @@ const Home = () => {
                           <i className="fa-solid fa-heart c-heart c-pointer style-1" />
                         </div>
                         <div className="card-body text-center py-3">
-                          <img src="assets/images/popular-img/review-img/pic-2.jpg" alt />
+                          <img src="assets/images/popular-img/review-img/pic-2.jpg" alt="Japan Ramen" />
                         </div>
                         <div className="card-footer pt-0 border-0 text-center">
                           <div>
@@ -590,7 +592,7 @@ const Home = () => {
                           <i className="fa-solid fa-heart c-heart c-pointer style-1" />
                         </div>
                         <div className="card-body text-center py-3">
-                          <img src="assets/images/popular-img/review-img/pic-3.jpg" alt />
+                          <img src="assets/images/popular-img/review-img/pic-3.jpg" alt="Fried Rice" />
                         </div>
                         <div className="card-footer pt-0 border-0 text-center">
                           <div>
@@ -615,7 +617,7 @@ const Home = () => {
                           <i className="fa-solid fa-heart ms-auto c-heart c-pointer style-1" />
                         </div>
                         <div className="card-body text-center py-3">
-                          <img src="assets/images/popular-img/review-img/pic-1.jpg" alt />
+                          <img src="assets/images/popular-img/review-img/pic-1.jpg" alt="Pepperoni Pizza" />
                         </div>
                         <div className="card-footer pt-0 border-0 text-center">
                           <div>
@@ -640,7 +642,7 @@ const Home = () => {
                           <i className="fa-solid fa-heart ms-auto c-heart c-pointer style-1" />
                         </div>
                         <div className="card-body text-center py-3">
-                          <img src="assets/images/popular-img/review-img/pic-1.jpg" alt />
+                          <img src="assets/images/popular-img/review-img/pic-1.jpg" alt="Pepperoni Pizza" />
                         </div>
                         <div className="card-footer pt-0 border-0 text-center">
                           <div>
@@ -719,7 +721,7 @@ const Home = () => {
                   </div>
                   <div className="order-check d-flex align-items-center my-3">
                     <div className="dlab-media">
-                      <img src="assets/images/popular-img/review-img/pic-1.jpg" alt />
+                      <img src="assets/images/popular-img/review-img/pic-1.jpg" alt="Pepperoni Pizza" />
                     </div>
                     <div className="dlab-info">
                       <div className="d-flex align-items-center justify-content-between">
@@ -738,7 +740,7 @@ const Home = () => {
                   </div>
                   <div className="order-check d-flex align-items-center my-3">
                     <div className="dlab-media">
-                      <img src="assets/images/popular-img/review-img/pic-2.jpg" alt />
+                      <img src="assets/images/popular-img/review-img/pic-2.jpg" alt="Japan Ramen" />
                     </div>
                     <div className="dlab-info">
                       <div className="d-flex align-items-center justify-content-between">
@@ -757,7 +759,7 @@ const Home = () => {
                   </div>
                   <div className="order-check d-flex align-items-center my-3">
                     <div className="dlab-media">
-                      <img src="assets/images/popular-img/review-img/pic-2.jpg" alt />
+                      <img src="assets/images/popular-img/review-img/pic-2.jpg" alt="Japan Ramen" />
                     </div>
                     <div className="dlab-info">
                       <div className="d-flex align-items-center justify-content-between">
@@ -776,7 +778,7 @@ const Home = () => {
                   </div>
                   <div className="order-check d-flex align-items-center my-3">
                     <div className="dlab-media">
-                      <img src="assets/images/popular-img/review-img/pic-3.jpg" alt />
+                      <img src="assets/images/popular-img/review-img/pic-3.jpg" alt="Fried Rice" />
                     </div>
                     <div className="dlab-info">
                       <div className="d-flex align-items-center justify-content-between">
@@ -817,7 +819,7 @@ const Home = () => {
                       <p className="mb-0">Lorem ipsum dolor sit amet, consectetur adipiscing elit. </p>
                     </div>	
                     <div className="dlab-img">
-                      <img src="assets/images/banner-img/pic-2.jpg" alt />
+                      <img src="assets/images/banner-img/pic-2.jpg" alt="Discount Voucher" />
                     </div>	
                   </div>
                 </div>
@@ -828,6 +830,16 @@ const Home = () => {
     
     </>
   )
+}
+
+const Home = () => {
+  const user = useContext(AuthContext);
+  // role_id 1 is Admin, render AdminDashboard
+  if (user && user.role_id == 1) {
+    return <AdminDashboard />
+  }
+  // Otherwise render CustomerDashboard (which was the original content of this file)
+  return <CustomerDashboard />
 }
 
 export default Home

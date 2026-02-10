@@ -48,7 +48,11 @@ class Order extends Model implements JsonSerializable
 	public function update_by_tracking_id()
 	{
 		global $db, $tx;
-		$db->query("update {$tx}Orders set tracking_id='$this->tracking_id' where id='$this->id'");
+		$payment_update = "";
+		if(isset($this->payment_status) && $this->payment_status != ""){
+			$payment_update = ", payment_status='$this->payment_status'";
+		}
+		$db->query("update {$tx}Orders set tracking_id='$this->tracking_id' $payment_update where id='$this->id'");
 	}
 	public function update_by_rider_id()
 	{

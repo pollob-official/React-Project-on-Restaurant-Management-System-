@@ -142,13 +142,17 @@
 	
 	var handleDzScroll = function() {
 		jQuery('.dlab-scroll').each(function(){
-			var scroolWidgetId = jQuery(this).attr('id');
-			const ps = new PerfectScrollbar('#'+scroolWidgetId, {
+            // Use native scroll for better performance and to avoid 'passive' event violations
+            jQuery(this).css('overflow-y', 'auto');
+            
+            /*
+			const ps = new PerfectScrollbar(this, {
 			  wheelSpeed: 2,
 			  wheelPropagation: true,
 			  minScrollbarLength: 20
 			});
             ps.isRtl = false;
+            */
 		})
 	}
 	
@@ -209,10 +213,12 @@
 	var handlePerfectScrollbar = function() {
 		if(jQuery('.dlabnav-scroll').length > 0)
 		{
-			//const qs = new PerfectScrollbar('.dlabnav-scroll');
-			const qs = new PerfectScrollbar('.dlabnav-scroll');
+            // Use native scroll for better performance and to avoid 'passive' event violations
+             jQuery('.dlabnav-scroll').css('overflow-y', 'auto');
+
+			/* const qs = new PerfectScrollbar('.dlabnav-scroll');
 			
-			qs.isRtl = false;
+			qs.isRtl = false; */
 		}
 	}
 
@@ -348,7 +354,9 @@
     }
     
 	var domoPanel = function(){
-		const ps = new PerfectScrollbar('.dlab-demo-content');
+		if(jQuery('.dlab-demo-content').length > 0){
+			const ps = new PerfectScrollbar('.dlab-demo-content');
+		}
 		$('.dlab-demo-trigger').on('click', function() {
 				$('.dlab-demo-panel').addClass('show');
 		  });
@@ -521,7 +529,7 @@
 			MagnificPopup();
 			FoodDeskSwiper();
 			handleSearchArea();
-			handleSupport();
+			//handleSupport();
 			//handleHeart();
 			
 			//handleBsSelect();
